@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+
+}
+
+
+@layer components {
+  .btn {
+    @apply text-xs font-medium rounded-lg p-3;
+  }
+
+  .btn-primary {
+    @apply bg-sky-500 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-grey text-white;
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 {
+    @apply text-lg font-medium
+  }
+
+  h3 {
+    @apply text-sm font-normal
+  }
+
+  p {
+    @apply text-xs font-normal
+  }
+}
+
+body {
+  background-color: #2a2929;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-move-enter-active,
+.fade-move-leave-active {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fade-move-enter-from,
+.fade-move-leave-to {
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+
+
