@@ -6,6 +6,8 @@ import TxInput from "../../components/tx-input/tx-input.vue";
 import TxToast from "../../components/tx-toast/tx-toast.vue";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
+import sendRequest from "../../infra/sendRequest";
+import TxMainInput from "../../components/tx-main-input.vue";
 
 export default defineComponent({
   name: "tx-registration",
@@ -14,23 +16,12 @@ export default defineComponent({
       return UserRole
     }
   },
-  directives: {
-    mask
-  },
   setup: () => {
     const validRegistration = computed(() => {
       if(!formData.phone || !formData.name || !formData.password || formData.password.length < 7) {
         return false;
       }
 
-      if(localStorage.role === UserRole.DRIVER) {
-
-        if(formData.carModel && formData.carNumber) {
-          showToastReg.value = false;
-          return true
-        }
-        return false;
-      }
       showToastReg.value = false;
 
       return true;
@@ -40,9 +31,6 @@ export default defineComponent({
       phone: "",
       name: "",
       password: "",
-      carModel: "",
-      carNumber: "",
-      car: "",
     })
 
     const isErrorReg = ref(validRegistration);
@@ -62,13 +50,13 @@ export default defineComponent({
 
       showToastReg.value = false;
 
-      if(localStorage.role === UserRole.DRIVER) {
-        formData.car = formData.carModel + " " + formData.carNumber;
-      }
+      formData.phone = formData.phone.split(" ").join("");
 
-      store.commit("setFormDataReg", formData);
-
-      router.push({path: '/driver/code'})
+      sendRequest("auth/reg", formData, "POST").then(res => {
+        console.log(res);
+        router.push({path: "/driver/login"});
+      })
+        .catch(e => console.log(e));
     }
 
     return {
@@ -82,6 +70,7 @@ export default defineComponent({
   components: {
     TxButton,
     TxInput,
-    TxToast
+    TxToast,
+    TxMainInput
   }
 });

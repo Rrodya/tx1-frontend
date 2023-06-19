@@ -5,7 +5,7 @@
     <div class="w-full flex flex-col mt-32 items-center md:w-1/3 m-auto">
       <TxButton class="w-full" :classes="['btn-primary']" text="Регистрация" @handle="$router.push({path: '/driver/registration'})"></TxButton>
       <TxButton class="mt-3 w-full" :classes="['btn-primary']" text="Авторизация" @handle="$router.push({path: '/driver/login'})"></TxButton>
-      <p @click="$router.go(-1)" class="m-3 cursor-pointer">Назад к выбору роли</p>
+      <p @click="$router.push('/')" class="m-3 cursor-pointer">Назад</p>
     </div>
   </div>
 </template>

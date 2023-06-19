@@ -1,11 +1,11 @@
 <template>
-  <button class="tx-button btn active:bg-sky-400 transition-colors" @click="handleButton" :class="props.classes">
+  <button class="tx-button btn active:bg-purple-400 transition-colors" @click="handleButton" :class="props.classes">
     {{ props.text }}
   </button>
 </template>
 
 <style>
-p {
+.tx-button p {
   color: #278ce5;
 }
 </style>

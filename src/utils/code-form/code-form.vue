@@ -1,5 +1,5 @@
 <template>
-  <div class="code-form">
+  <div class="code-form full-container">
     <h1 class="mt-6 mb-8 text-center">Введите код смс</h1>
     <input
       class="text-center pr-2 bg-slate-800 focus:ring-2 focus:ring-blue-500 tracking-normal focus:outline-none focus:bg-slate-700 transition:colors duration-200 appearance-none w-full text-sm leading-6 text-slate-500 placeholder-slate-400 rounded-md py-3 pl-3 ring-1 ring-slate-200 shadow-sm"
@@ -16,5 +16,5 @@
   </div>
 </template>
 
-<script lang="ts" src="./code-form.ts"></script>
-<style src="./code-form.css"></style>
+<script lang="ts" src="code-form.ts"></script>
+<style src="code-form.css"></style>

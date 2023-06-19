@@ -15,8 +15,11 @@ module.exports = {
       desktop: "1248px",
     },
     colors: {
-      white: "#FFFFFF",
+      white: "#ffffff",
+      "main-white": "#f3e6e6",
       "dark-blue": "#171634",
+      "dark-bluel": "#1f1e44",
+
       // blue: "#1E88E5",
       red: "#F44336",
       green: "#4CAF50",
@@ -30,6 +33,12 @@ module.exports = {
       "slate-700": "#334155",
       sky: colors.sky,
       blue: colors.blue,
+      cyan: colors.cyan,
+      "purple-one": "#f4f0fa",
+      "purple-two": "#e5d9f2",
+      "purple-three": "#cdc1ff",
+      "purple-four": "#8b7bde",
+      "purple-five": "#7371fc"
     },
     boxShadow: {
       sm: "0, 2px 4px 0px rgba(11.10.55.15)",
@@ -39,6 +48,7 @@ module.exports = {
       xs: ["14px", { lineHeight: "24px", letterSpacing: "-0.03em" }],
       sm: ["16px", { lineHeight: "28px", letterSpacing: "-0.03em" }],
       lg: ["18px", { lineHeight: "28px", letterSpacing: "-0.03em" }],
+      "2lg": ["24px", { lineHeight: "28px", letterSpacing: "-0.03em" }],
       "2xl": ["36px", { lineHeight: "48px", letterSpacing: "-0.032em" }],
       "3xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.032em" }],
       "4xl": ["56px", { lineHeight: "64px", letterSpacing: "-0.032em" }],

@@ -2,7 +2,6 @@ import Vuex from "vuex";
 
 export const store = new Vuex.Store<any>({
   modules: {},
-  getters: {},
   actions: {
     checkAPI() {
       return {message: "OK"}
@@ -16,14 +15,22 @@ export const store = new Vuex.Store<any>({
       car: null,
       password: "",
       role: ""
-    }
+    },
+    isAuth: false,
+    isAdmin: false,
   },
   mutations: {
     setFormDataReg(context, {phone, name, password, car}) {
-      context.state.formDataReg.phone = phone;
-      context.state.formDataReg.phone = name;
-      context.state.formDataReg.phone = password;
-      context.state.formDataReg.phone = car;
+      context.formDataReg.phone = phone.split(" ").join("");
+      context.formDataReg.name = name;
+      context.formDataReg.password = password;
+      context.formDataReg.car = car;
+      context.formDataReg.role = localStorage.role;
     }
   },
+  getters: {
+    getIsAdmin(context) {
+      return context.state.isAdmin;
+    }
+  }
 })
